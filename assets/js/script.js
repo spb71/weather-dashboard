@@ -9,6 +9,9 @@ function weatherData (cityName) {
     .then(function(response){
         return response.json();
     })
+    .then(function(data) {
+        console.log(data);
+    })
 }
 
 searchButtonEl.addEventListener("click", function() {
