@@ -1,7 +1,7 @@
 var searchInputEl = document.getElementById("search-input");
 var searchButtonEl = document.getElementById("search-button");
 
-var APIKey = "1fdb6e8ffa8955ed716b68c2022423d7";
+var APIKey = config.SECRET_API_KEY;
 
 function weatherData (cityName) {
     var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
