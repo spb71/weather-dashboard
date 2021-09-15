@@ -24,6 +24,7 @@ function weatherData (cityName) {
         cityEl.innerText = data.name + " (" + today + ")";
         var pic = data.weather[0].icon;
         picEl.setAttribute("src", "https://openweathermap.org/img/wn/" + pic + "@2x.png");
+        picEl.setAttribute("title", data.weather[0].description);
         picEl.setAttribute("alt", data.weather[0].description);
         var temp = Math.floor(data.main.temp * 1.8 - 459.67);
         tempEl.innerText = "Temp: " + temp + "ºF";
@@ -53,7 +54,8 @@ function weatherData (cityName) {
                 var forecastHumid = document.createElement("p");
                 forecastDate.innerText = moment(forecastIndex.dt*1000).format("MM/DD/YYYY");
                 forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecastIndex.weather[0].icon + "@2x.png");
-                forecastIcon.setAttribute("alt", forecastIndex.weather[0].description);
+                forecastIcon.setAttribute("title", forecastIndex.weather[0].description);
+                forecastIcon.setAttribute("alt", data.weather[0].description);
                 var temp2 = Math.floor(forecastIndex.temp.day * 1.8 - 459.67);
                 forecastTemp.innerText = "Temp: " + temp2 + "ºF";
                 forecastWind.innerText = "Wind: " + forecastIndex.wind_speed + " MPH";
