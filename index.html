@@ -1,89 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Weather Dashboard</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-4 bg-light">
-          <p class="search-header my-1 h1">Search for a city:</p>
-          <div class="input-group mb-3">
-              <input id="search-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
-          </div>
-          <div class="d-grid gap-2 d-md-block">
-            <button id="search-button" class="btn btn-primary" type="button">Search</button>
-          </div>
-          <br />
-          <div class="d-grid gap-2 d-md-block">
-            <button id="clear-button" class="btn btn-primary" type="button">Clear</button>
-          </div>
-          <form id="history"></form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 bg-light">
+        <p class="search-header my-1 h1">Search for a city:</p>
+        <div class="input-group mb-3">
+          <input id="search-input" type="text" class="form-control" placeholder="Enter city name"
+            aria-label="Enter city name">
         </div>
-        <div class="col-8">
-          <div class="row mr-0">
-            <div class="col-12 border border-dark m-3 rounded">
-              <div class="row">
-                <div class="col-12">
+        <div class="d-grid gap-2 d-md-block">
+          <button id="search-button" class="btn btn-primary" type="button">Search</button>
+        </div>
+        <br />
+        <div class="d-grid gap-2 d-md-block">
+          <button id="clear-button" class="btn btn-primary" type="button">Clear</button>
+        </div>
+        <form id="history"></form>
+      </div>
+      <div class="col-9">
+        <div class="row mr-0">
+          <div class="col-12 border border-dark m-3 rounded">
+            <div class="row">
+              <div class="col-12">
+                <h3>
                   <span id="city" class="align-middle"></span>
                   <img id="pic" src="#" alt="">
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                      <p id="temperature"></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                      <p id="humidity"></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                      <p id="wind-speed"></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12 d-flex">
-                      <p id="uv-index"></p>
-                  </div>
-                </div>
+                </h3>
+              </div>
+              <div class="col-12">
+                <p id="temperature"></p>
+              </div>
+
+              <div class="col-12">
+                <p id="wind"></p>
+              </div>
+
+              <div class="col-12">
+                <p id="humidity"></p>
+              </div>
+
+              <div class="col-12 d-flex">
+                <p id="uv-index"></p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-                <h4>5-Day Forecast:</h4>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4>5-Day Forecast:</h4>
           </div>
-          <div class="row">
-            <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-            <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-            <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-            <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-            <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-          </div>
+          <div class="col forecast bg-dark text-white ml-3 mb-3 pr-0 pl-2 rounded"></div>
+          <div class="col forecast bg-dark text-white ml-3 mb-3 pr-0 pl-2 rounded"></div>
+          <div class="col forecast bg-dark text-white ml-3 mb-3 pr-0 pl-2 rounded"></div>
+          <div class="col forecast bg-dark text-white ml-3 mb-3 pr-0 pl-2 rounded"></div>
+          <div class="col forecast bg-dark text-white ml-3 mb-3 pr-0 pl-2 rounded"></div>
         </div>
       </div>
     </div>
-    <script src="./assets/js/config.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>

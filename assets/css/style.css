@@ -1,5 +1,12 @@
-.row {}
+#city {
+    font-weight: bold;
+}
 
-.btn-primary {
+.btn-primary,
+.btn-info {
     width: 100%;
 }
+
+/* .row {
+    border: 1px solid red;
+} */
