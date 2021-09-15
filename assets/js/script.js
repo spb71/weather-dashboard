@@ -55,7 +55,6 @@ function weatherData (cityName) {
                 forecastDate.innerText = moment(forecastIndex.dt*1000).format("MM/DD/YYYY");
                 forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecastIndex.weather[0].icon + "@2x.png");
                 forecastIcon.setAttribute("title", forecastIndex.weather[0].description);
-                forecastIcon.setAttribute("alt", data.weather[0].description);
                 var temp2 = Math.floor(forecastIndex.temp.day * 1.8 - 459.67);
                 forecastTemp.innerText = "Temp: " + temp2 + "ºF";
                 forecastWind.innerText = "Wind: " + forecastIndex.wind_speed + " MPH";
